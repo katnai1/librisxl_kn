@@ -41,7 +41,7 @@ public abstract class XlServer {
     // TODO: review this...
     protected Server createServer() {
         int maxConnections = Configuration.getMaxConnections();
-        var queue = new ArrayBlockingQueue<Runnable>(1);
+        var queue = new ArrayBlockingQueue<Runnable>(maxConnections);
         var pool = new ExecutorThreadPool(maxConnections, maxConnections, queue);
 
         var server = new Server(pool);
@@ -49,10 +49,11 @@ public abstract class XlServer {
         int port = Configuration.getHttpPort();
 
         var httpConfig = new HttpConfiguration();
-        httpConfig.setIdleTimeout(20000);
+        httpConfig.setIdleTimeout(5 * 60 * 1000); // more than nginx keepalive_timeout
+        httpConfig.setPersistentConnectionsEnabled(true);
         try (var http = new ServerConnector(server, new HttpConnectionFactory(httpConfig))) {
             http.setPort(port);
-            http.setAcceptQueueSize(0);
+            http.setAcceptQueueSize(maxConnections);
             server.setConnectors(new Connector[]{ http });
             log.info("Started server on port {}", port);
         }
