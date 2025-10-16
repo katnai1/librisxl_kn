@@ -1,0 +1,102 @@
+---
+title: Libris API-dokumentation
+---
+
+## Användarvillkor för Libris publika API:er
+Typnormalisering
+Bakgrund - problemet vi vill lösa
+På grund av hur metadata beskrivs i MARC21-formatet dubbleras och ibland trippleras uppgift om materialtyp, format och/eller genre/form. Denna aktivitet syftar till att minska denna dubblering av information och på det sätt göra det enklare att söka och hitta fram material i olika tjänster som använder sig av Libris data, t.ex. Libris katalogisering och Libris Sök, data.kb.se, tidningar.kb.se och Bläddra.
+De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceType, carrierType, mediaType, genreFrom
+
+Verk
+•	Nya verkstyper (instanceOf/@type: Verkstyp. )
+o	Monograph
+o	Serial
+o	Collection
+o	Integrating
+ersätter de gamla
+•	Gamla verkstyperna uttrycks med ContentType eller GenreForm.
+•	Ny egenskap Kategori (instanceOf/category) på verket. Hit flyttas contentType, genreForm.
+Nedan hittar ni mappningen mellan gamla verktyperna och contentType (RDA-termlista) eller genreForm (SAOGF-termlista)
+ManuscriptText https://id.kb.se/term/saogf/Handskrifter
+Text https://id.kb.se/term/rda/Text
+Audio https://id.kb.se/term/rda/SpokenWord
+NotatedMusic https://id.kb.se/term/rda/NotatedMusic
+MixedMaterial ny genreForm MixedMaterial, ingen länk i skrivande stund
+Cartography https://id.kb.se/term/rda/CartographicImage
+Object https://id.kb.se/term/rda/ThreeDimensionalForm
+Multimedia https://id.kb.se/term/rda/ComputerProgram
+Visual
+Dataset
+Arrangement
+NotatedMovement https://id.kb.se/term/rda/NotatedMovement
+Software https://id.kb.se/term/rda/ComputerProgram
+Music
+MusicAudio https://id.kb.se/term/rda/PerformedMusic
+NonMusicalAudio
+NonMusicAudio
+ManuscriptNotatedMusic https://id.kb.se/term/saogf/Handskrifter + https://id.kb.se/term/rda/NotatedMusic
+Kit ny genreForm Kit, ingen länk i skrivande stund
+ManuscriptCartography https://id.kb.se/term/saogf/Handskrifter
+MovingImage https://id.kb.se/term/rda/TwoDimensionalMovingImage + https://id.kb.se/term/rda/CartographicImage
+StillImage https://id.kb.se/term/rda/StillImage
+ProjectedImage
+Instans
+•	Nya instantyperna (@type: Instanstyp)
+o	Physical
+o	Digital 
+ersätter de gamla
+•	Ny egenskap Kategori (category) även i instansdelen
+Här samlas MediaType, CarrierType (och GenreForm om den fanns i instansdelen)
+•	egenskapen IssuanceType utgår. Uppgifterna finns i nya versktyperna
+Monografisk resurs → Verkstyp Monography
+Integrerande → Verkstyp Integrating
+Samling → Verkstyp Collection
+Seriell resurs → Verkstyp Serial
+
+
+
+
+
+
+EXEMPEL
+Tryckt monografi
+FÖRE
+ 
+
+
+
+
+
+
+
+
+
+EFTER
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Tryckt affisch
+FÖRE
+ 
+
+
+
+
+
+
+
+
+
+EFTER
+ 
