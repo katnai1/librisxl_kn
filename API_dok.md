@@ -112,8 +112,8 @@ ProjectedImage
 
 ```json
    
-        "@type": "Physical"
-                 "Digital"
+        "@type": "PhysicalResource"
+                 "DigitalResource"
                  
                  
 ```
@@ -174,5 +174,234 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
 
 
 
-
+<details>
+<summary>Exempel efter typnormaliseringen</summary>   
+   
+```json
+{
+  "@graph": [
+    {
+      "@id": "https://id.kb.se/TEMPID",
+      "@type": "Record",
+      "mainEntity": {
+        "@id": "https://id.kb.se/TEMPID#it"
+      },
+      "descriptionConventions": [
+        {
+          "@id": "https://id.kb.se/marc/Isbd"
+        },
+        {
+          "@id": "https://id.kb.se/term/enum/Rda"
+        }
+      ],
+      "descriptionLanguage": {
+        "@id": "https://id.kb.se/language/swe"
+      },
+      "encodingLevel": "marc:MinimalLevel",
+      "recordStatus": "",
+      "marc:catalogingSource": {
+        "@id": "https://id.kb.se/marc/CooperativeCatalogingProgram"
+      },
+      "descriptionCreator": {
+        "@id": "https://libris.kb.se/library/SEK"
+      }
+    },
+    {
+      "@id": "https://id.kb.se/TEMPID#it",
+      "@type": "PhysicalResource",   "OBS! NY INSTANSTYP"
+      "hasTitle": [
+        {
+          "@type": "Title",
+          "mainTitle": "",
+          "subtitle": ""
+        }
+      ],
+      "responsibilityStatement": "",
+      "identifiedBy": [
+        {
+          "@type": "ISBN",
+          "value": "",
+          "qualifier": ""
+        }
+      ],
+      "editionStatement": [
+        ""
+      ],
+      "publication": [
+        {
+          "@type": "PrimaryPublication",
+          "year": "",
+          "date": "",
+          "country": [
+            {
+              "@id": "https://id.kb.se/country/sw"
+            }
+          ],
+          "place": {
+            "@type": "Place",
+            "label": [
+              ""
+            ]
+          },
+          "agent": {
+            "@type": "Agent",
+            "label": [
+              ""
+            ]
+          }
+        }
+      ],
+      "manufacture": [
+        {
+          "@type": "Manufacture",
+          "agent": [
+            {
+              "@type": "Agent",
+              "label": [
+                ""
+              ]
+            }
+          ],
+          "date": "",
+          "place": [
+            {
+              "@type": "Place",
+              "label": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "copyright": [
+        {
+          "@type": "Copyright",
+          "date": ""
+        }
+      ],
+      "extent": [
+        {
+          "@type": "Extent",
+          "label": [
+            ""
+          ]
+        }
+      ],
+      "physicalDetailsNote": "",
+      "hasDimensions": {
+        "@type": "Dimensions",
+        "label": [
+          ""
+        ]
+      },
+      "seriesMembership": [
+        {
+          "@type": "SeriesMembership",
+          "inSeries": {
+            "@type": "Instance",
+            "identifiedBy": [
+              {
+                "@type": "ISSN",
+                "value": ""
+              }
+            ],
+            "instanceOf": {
+              "@type": "Work",
+              "hasTitle": [
+                {
+                  "@type": "Title",
+                  "mainTitle": ""
+                }
+              ]
+            }
+          },
+          "marc:seriesTracingPolicy": "",
+          "seriesEnumeration": "",
+          "seriesStatement": [
+            ""
+          ]
+        }
+      ],
+      "hasNote": [
+        {
+          "@type": "Note",
+          "label": [
+            ""
+          ]
+        }
+      ],
+      "instanceOf": {
+        "@type": "Monograph",    "OBS! NY VERKSTYP"
+        "language": [
+          {
+            "@id": "https://id.kb.se/language/swe"
+          }
+        ],
+        "category": [
+          {
+            "@id": "https://id.kb.se/term/rda/Text"     "OBS! NY EGENSKAP MED CONTENTYPE"
+          }
+        ],
+        "classification": [
+          {
+            "@type": "ClassificationDdc",
+            "code": "",
+            "edition": "full",
+            "editionEnumeration": "23/swe"
+          },
+          {
+            "@type": "Classification",
+            "code": "",
+            "inScheme": {
+              "@type": "ConceptScheme",
+              "@id": "https://id.kb.se/term/kssb/8",
+              "code": "kssb",
+              "version": "8"
+            }
+          }
+        ],
+        "contribution": [
+          {
+            "@type": "PrimaryContribution",
+            "agent": null,
+            "role": [
+              {
+                "@id": "https://id.kb.se/relator/author"
+              }
+            ]
+          },
+          {
+            "@type": "Contribution",
+            "agent": null,
+            "role": []
+          }
+        ],
+        "hasNote": [
+          {
+            "@type": "marc:LanguageNote",
+            "label": [
+              ""
+            ]
+          }
+        ],
+        "subject": [],
+        "intendedAudience": []
+      },
+      "contribution": [
+        {
+          "@type": "Contribution",
+          "agent": null,
+          "role": []
+        }
+      ],
+      "category": [
+        {
+          "@id": "https://id.kb.se/term/ktg/PrintedVolume"    "OBS! NY EGENSKAP"
+        }
+      ]
+    }
+  ]
+}
+```
+</details>
 
