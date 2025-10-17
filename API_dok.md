@@ -175,7 +175,7 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
 
 
 <details>
-<summary>Exempel efter typnormaliseringen</summary>   
+<summary>Exempel i JSON efter typnormaliseringen</summary>   
    
 ```json
 {
