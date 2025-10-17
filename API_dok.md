@@ -20,7 +20,8 @@ De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceT
                  
 }
 ```
-####	Ny egenskap Kategori på verket.
+Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAOGF-termlista)
+####	Ny egenskap Kategori på verket. Hit flyttas gamla verkstyperna och genreForm.
 ```json
    "instanceOf": {
         "category": [
@@ -32,7 +33,7 @@ De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceT
 }
 
 ```
-####	Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAOGF-termlista). De flyttas till den nya egenskapen Kategori
+
 <details>
 
 <summary>Gamla verktyper</summary>
@@ -130,13 +131,16 @@ ProjectedImage
 
 ```
 
-####	egenskapen IssuanceType utgår. Uppgifterna finns i nya versktyperna
+####	egenskapen IssuanceType utgår. Uppgifterna finns i nya versktyperna  
+
 <details>
 
 <summary>Nedan hittar ni mappningen mellan gamla IssuanceType och versktyperna</summary>  
 
+IssuanceType: _Monografisk resurs_ hämtas från versktyp  
 
-IssuanceType: Monografisk resurs hämtas från versktyp
+
+
 
 ```json
 
@@ -145,21 +149,21 @@ IssuanceType: Monografisk resurs hämtas från versktyp
                  
 }
 ```
-IssuanceType: Integrerande hämtas från versktyp
+IssuanceType: _Integrerande_ hämtas från versktyp
 ```json
 "instanceOf": {
         "@type": "Integrating"                
                  
 }
 ```
-IssuanceType: Samling hämtas från versktyp
+IssuanceType: _Samling_ hämtas från versktyp
 ```json
 "instanceOf": {
         "@type": "Collection"                
                  
 }
 ```
-IssuanceType: Seriell resurs hämtas från versktyp
+IssuanceType: _Seriell resurs_ hämtas från versktyp
 ```json
 "instanceOf": {
         "@type": "Serial"                
