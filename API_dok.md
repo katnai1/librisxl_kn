@@ -1,12 +1,14 @@
 ---
 title: Typnormalisering
 ---
+Läs mer om typnormaliseringen
+Länk
 
 De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceType, carrierType, mediaType, genreFrom
 
 
 # Verk
-####	Nya verkstyper ersätter gamla verkstyper
+####	Nya verkstyper
 
 
 ```json
@@ -18,7 +20,19 @@ De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceT
                  
 }
 ```
+####	Ny egenskap Kategori på verket.
+```json
+   "instanceOf": {
+        "category": [
+          {
+            "@id": "https://id.kb.se/term/rda/Text"
+          }
+        ],
+                 
+}
 
+```
+####	Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAOGF-termlista). De flyttas till den nya egenskapen Kategori
 <details>
 
 <summary>Gamla verktyper</summary>
@@ -59,7 +73,7 @@ De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceT
 </details>
 
 
-####	Gamla verkstyperna uttrycks med ContentType eller GenreForm.
+
 <details>
 
 <summary>Nedan hittar ni mappningen mellan gamla verktyperna och contentType (RDA-termlista) eller genreForm (SAOGF-termlista)</summary>
@@ -90,6 +104,71 @@ StillImage https://id.kb.se/term/rda/StillImage
 ProjectedImage  
 </details>
 
-####	Ny egenskap Kategori (instanceOf/category) på verket. Hit flyttas contentType, genreForm.
+# Instans
+
+####	Nya instanstyper
+
+
+```json
+   
+        "@type": "Physical"
+                 "Digital"
+                 
+                 
+```
+
+####	Ny egenskap Kategori på instasen. Hit flyttas MediaType, CarrierType (och GenreForm om den fanns i instansdelen)
+```json
+   
+        "category": [
+        {
+          "@id": "https://id.kb.se/term/ktg/PrintedVolume"
+        }
+      ]
+                 
+
+
+```
+
+####	egenskapen IssuanceType utgår. Uppgifterna finns i nya versktyperna
+<details>
+
+<summary>Nedan hittar ni mappningen mellan gamla IssuanceType och versktyperna</summary>  
+
+
+IssuanceType: Monografisk resurs hämtas från versktyp
+
+```json
+
+"instanceOf": {
+        "@type": "Monograph"                
+                 
+}
+```
+IssuanceType: Integrerande hämtas från versktyp
+```json
+"instanceOf": {
+        "@type": "Integrating"                
+                 
+}
+```
+IssuanceType: Samling hämtas från versktyp
+```json
+"instanceOf": {
+        "@type": "Collection"                
+                 
+}
+```
+IssuanceType: Seriell resurs hämtas från versktyp
+```json
+"instanceOf": {
+        "@type": "Serial"                
+                 
+}
+```
+</details>
+
+
+
 
 
