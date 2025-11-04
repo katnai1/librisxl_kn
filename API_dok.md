@@ -339,7 +339,7 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
             "@id": "https://id.kb.se/language/swe"
           }
         ],
- #  "NY EGENSKAP FÖR INNEHÅLLSTYP OCH GENREFORM"
+ #  "NY EGENSKAP för Innehållstyp och GenreForm"
         "category": [
           {   
             "@id": "https://id.kb.se/term/rda/Text"     
@@ -397,7 +397,7 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
           "role": []
         }
       ],
- # "NY EGENSKAP"
+ # "NY EGENSKAP för MediaType, CarrierType"
       "category": [
         {  
           "@id": "https://id.kb.se/term/ktg/PrintedVolume"   
