@@ -208,7 +208,8 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
     },
     {
       "@id": "https://id.kb.se/TEMPID#it",
-      "@type": "PhysicalResource",   "OBS! NY INSTANSTYP"
+     #   "NY INSTANSTYP"
+      "@type": "PhysicalResource",  
       "hasTitle": [
         {
           "@type": "Title",
@@ -331,15 +332,17 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
         }
       ],
       "instanceOf": {
-        "@type": "Monograph",    "OBS! NY VERKSTYP"
+     # "NY VERKSTYP" 
+        "@type": "Monograph",    
         "language": [
           {
             "@id": "https://id.kb.se/language/swe"
           }
         ],
+ #  "NY EGENSKAP FÖR INNEHÅLLSTYP OCH GENREFORM"
         "category": [
-          {
-            "@id": "https://id.kb.se/term/rda/Text"     "OBS! NY EGENSKAP MED CONTENTYPE"
+          {   
+            "@id": "https://id.kb.se/term/rda/Text"     
           }
         ],
         "classification": [
@@ -394,9 +397,10 @@ IssuanceType: _Seriell resurs_ hämtas från versktyp
           "role": []
         }
       ],
+ # "NY EGENSKAP"
       "category": [
-        {
-          "@id": "https://id.kb.se/term/ktg/PrintedVolume"    "OBS! NY EGENSKAP"
+        {  
+          "@id": "https://id.kb.se/term/ktg/PrintedVolume"   
         }
       ]
     }
