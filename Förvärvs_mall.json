@@ -14,6 +14,7 @@
           "@id": "https://id.kb.se/term/enum/Rda"
         }
       ],
+      //Landkod (för utgivningsland): https://id.kb.se/find?q=%2a&_limit=200&%40type=Language&_sort=_sortKeyByLang.sv
       "descriptionLanguage": {
         "@id": "https://id.kb.se/language/swe"
       },
@@ -28,7 +29,9 @@
     },
     {
       "@id": "https://id.kb.se/TEMPID#it",
+      //Möjliga värden: PhysicalResource, DigitalResource
       "@type": "PhysicalResource",
+      //Obligatorisk
       "hasTitle": [
         {
           "@type": "Title",
