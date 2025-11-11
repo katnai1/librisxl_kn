@@ -160,6 +160,7 @@
             "@id": "https://id.kb.se/language/swe"
           }
         ],
+        //Möjliga värden:
         "category": [
           {
             "@id": "https://id.kb.se/term/rda/Text"
@@ -217,6 +218,7 @@
           "role": []
         }
       ],
+       //Möjliga värden:
       "category": [
         {
           "@id": "https://id.kb.se/term/ktg/PrintedVolume"
