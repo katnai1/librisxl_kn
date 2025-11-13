@@ -77,32 +77,34 @@ Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAO
 
 <details>
 
-<summary>Nedan hittar ni mappningen mellan gamla verktyperna och contentType (RDA-termlista) eller genreForm (SAOGF-termlista)</summary>
+<summary>Mappningen mellan gamla verktyperna och contentType (RDA-termlista) eller genreForm (SAOGF-termlista)</summary>
 
-
-ManuscriptText   https://id.kb.se/term/saogf/Handskrifter    
-Text  https://id.kb.se/term/rda/Text  
-Audio https://id.kb.se/term/rda/SpokenWord  
-NotatedMusic https://id.kb.se/term/rda/NotatedMusic  
-MixedMaterial ny genreForm MixedMaterial, ingen länk i skrivande stund  
-Cartography https://id.kb.se/term/rda/CartographicImage  
-Object https://id.kb.se/term/rda/ThreeDimensionalForm  
-Multimedia https://id.kb.se/term/rda/ComputerProgram  
-Visual  
-Dataset  
-Arrangement  
-NotatedMovement https://id.kb.se/term/rda/NotatedMovement  
-Software https://id.kb.se/term/rda/ComputerProgram  
-Music  
-MusicAudio https://id.kb.se/term/rda/PerformedMusic  
-NonMusicalAudio  
-NonMusicAudio  
-ManuscriptNotatedMusic https://id.kb.se/term/saogf/Handskrifter + https://id.kb.se/term/rda/NotatedMusic  
-Kit ny genreForm Kit, ingen länk i skrivande stund  
-ManuscriptCartography https://id.kb.se/term/saogf/Handskrifter  
-MovingImage https://id.kb.se/term/rda/TwoDimensionalMovingImage + https://id.kb.se/term/rda/CartographicImage  
-StillImage https://id.kb.se/term/rda/StillImage  
-ProjectedImage  
+|gamla verktyper  | contentType/genreForm |
+| ------------- | ------------- |
+| ManuscriptText  |https://id.kb.se/term/saogf/Handskrifter  |
+| Text  | https://id.kb.se/term/rda/Text  |
+|Audio| https://id.kb.se/term/rda/SpokenWord  |
+|NotatedMusic|https://id.kb.se/term/rda/NotatedMusic  |
+|MixedMaterial|ny genreForm MixedMaterial, ingen länk i skrivande stund|
+|Cartography|https://id.kb.se/term/rda/CartographicImage|
+|Object|https://id.kb.se/term/rda/ThreeDimensionalForm  |
+|Multimedia|https://id.kb.se/term/rda/ComputerProgram|
+|Visual| |
+|Dataset||
+|Arrangement||
+|NotatedMovement|https://id.kb.se/term/rda/NotatedMovement|
+|Software|https://id.kb.se/term/rda/ComputerProgram|
+|Music||
+|MusicAudio|https://id.kb.se/term/rda/PerformedMusic|
+|NonMusicalAudio||
+|NonMusicAudio||
+|ManuscriptNotatedMusic| https://id.kb.se/term/saogf/Handskrifter + https://id.kb.se/term/rda/NotatedMusic |
+|Kit|ny genreForm Kit, ingen länk i skrivande stund |
+|ManuscriptCartography|https://id.kb.se/term/saogf/Handskrifter|  
+|MovingImage|https://id.kb.se/term/rda/TwoDimensionalMovingImage + https://id.kb.se/term/rda/CartographicImage  |
+|StillImage|https://id.kb.se/term/rda/StillImage |
+|ProjectedImage||  
+  
 </details>
 
 # Instans
@@ -135,41 +137,16 @@ ProjectedImage
 
 <details>
 
-<summary>Nedan hittar ni mappningen mellan gamla IssuanceType och versktyperna</summary>  
+<summary>Mappningen mellan gamla IssuanceType och versktyperna</summary>  
 
-IssuanceType: _Monografisk resurs_ hämtas från versktyp  
+ |Issuance Type  | ny versktyp |
+| ------------- | ------------- |
+| Monografisk resurs |"instanceOf": {"@type": "Monograph"}  |
+| Integrerande  | "instanceOf": { "@type": "Integrating"}  |
+|Samling|"instanceOf": {"@type": "Collection"} |
+|Seriell resurs |"instanceOf": {"@type": "Serial"}   |
 
 
-
-
-```json
-
-"instanceOf": {
-        "@type": "Monograph"                
-                 
-}
-```
-IssuanceType: _Integrerande_ hämtas från versktyp
-```json
-"instanceOf": {
-        "@type": "Integrating"                
-                 
-}
-```
-IssuanceType: _Samling_ hämtas från versktyp
-```json
-"instanceOf": {
-        "@type": "Collection"                
-                 
-}
-```
-IssuanceType: _Seriell resurs_ hämtas från versktyp
-```json
-"instanceOf": {
-        "@type": "Serial"                
-                 
-}
-```
 </details>
 
 
