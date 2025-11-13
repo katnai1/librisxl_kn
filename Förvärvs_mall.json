@@ -49,7 +49,7 @@
           "qualifier": ""
         }
       ],
-      //State publication year and country. Country codes 
+      //State publication year and country. Country codes . State publisher
      "publication": [
         {
           "@type": "PrimaryPublication",
