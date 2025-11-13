@@ -14,7 +14,7 @@
           "@id": "https://id.kb.se/term/enum/Rda"
         }
       ],
-      //Landkod (för utgivningsland): https://id.kb.se/find?q=%2a&_limit=200&%40type=Language&_sort=_sortKeyByLang.sv
+      //For language codes use: https://id.kb.se/find?q=%2a&_limit=200&%40type=Language&_sort=_sortKeyByLang.sv
       "descriptionLanguage": {
         "@id": "https://id.kb.se/language/swe"
       },
@@ -29,9 +29,9 @@
     },
     {
       "@id": "https://id.kb.se/TEMPID#it",
-      //Möjliga värden: PhysicalResource, DigitalResource
+      //Possible values: PhysicalResource, DigitalResource
       "@type": "PhysicalResource",
-      //Obligatorisk
+      //mainTitle is mandatory
       "hasTitle": [
         {
           "@type": "Title",
@@ -39,7 +39,9 @@
           "subtitle": ""
         }
       ],
+      //Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed.
       "responsibilityStatement": "",
+      //State identify type and its value. Idnetifier types are in Subclasses section of https://id.kb.se/vocab/Identifier. State qualifier (inbunden or häftad) if neccessary 
       "identifiedBy": [
         {
           "@type": "ISBN",
@@ -47,14 +49,11 @@
           "qualifier": ""
         }
       ],
-      "editionStatement": [
-        ""
-      ],
-      "publication": [
+      //State publication year and country. Country codes 
+     "publication": [
         {
           "@type": "PrimaryPublication",
           "year": "",
-          "date": "",
           "country": [
             {
               "@id": "https://id.kb.se/country/sw"
