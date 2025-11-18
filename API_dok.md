@@ -4,7 +4,7 @@ title: Typnormalisering
 Läs mer om typnormaliseringen
 Länk
 
-De egenskaperna som påverkas är: verkstyp, instantyp, innehållstyp, issuanceType, carrierType, mediaType, genreFrom
+De egenskaperna som påverkas är: verkstyp, instanstyp, innehållstyp, issuanceType, carrierType, mediaType, genreFrom
 
 
 # Verk
