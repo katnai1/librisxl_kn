@@ -1,10 +1,11 @@
 ---
 title: Typnormalisering
 ---
+Arbetet med typnormaliseringen är pågående och instruktionen kommer att justeras därefter.
 Läs mer om typnormaliseringen
-Länk
+(Länk kommer)
 
-De egenskaperna som påverkas är: verkstyp, instanstyp, innehållstyp, issuanceType, carrierType, mediaType, genreFrom
+De egenskaperna som påverkas är: verkstyp, instanstyp, innehållstyp, utgivningssätt, bärartyp, mediatyp, genre/form
 
 
 # Verk
@@ -21,12 +22,15 @@ De egenskaperna som påverkas är: verkstyp, instanstyp, innehållstyp, issuance
 }
 ```
 Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAOGF-termlista)
-####	Ny egenskap Kategori på verket. Hit flyttas gamla verkstyperna och genreForm.
+####	Ny egenskap Kategori på verket. Hit flyttas gamla verkstyperna, genreForm och innehållstyp
 ```json
    "instanceOf": {
         "category": [
           {
             "@id": "https://id.kb.se/term/rda/Text"
+          },
+         {
+            "@id": "https://id.kb.se/saogf/Romaner"
           }
         ],
                  
@@ -34,44 +38,7 @@ Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAO
 
 ```
 
-<details>
 
-<summary>Gamla verktyper</summary>
-
-
-
-  ```json
-
-
- "instanceOf": {
-        "@type": "ManuscriptText"
-                 "Text"
-                 "Audio"
-                 "NotatedMusic"                             
-                 "MixedMaterial"
-                 "Cartography"
-                 "Object"
-                 "Multimedia" 
-                 "Visual"
-                 "Dataset"
-                 "Arrangement"
-                 "NotatedMovement" 
-                 "Software" 
-                 "Music"
-                 "MusicAudio" 
-                 "NonMusicalAudio"
-                 "NonMusicAudio"
-                 "ManuscriptNotatedMusic" 
-                 "Kit" 
-                 "ManuscriptCartography" 
-                 "MovingImage" 
-                 "StillImage" 
-                 "ProjectedImage"
-}
-```
-
-
-</details>
 
 
 
@@ -85,25 +52,22 @@ Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAO
 | Text  | https://id.kb.se/term/rda/Text  |
 |Audio| https://id.kb.se/term/rda/SpokenWord  |
 |NotatedMusic|https://id.kb.se/term/rda/NotatedMusic  |
-|MixedMaterial|ny genreForm MixedMaterial, ingen länk i skrivande stund|
+|MixedMaterial|https://id.kb.se/term/ktg/MixedMaterial|
 |Cartography|https://id.kb.se/term/rda/CartographicImage|
 |Object|https://id.kb.se/term/rda/ThreeDimensionalForm  |
 |Multimedia|https://id.kb.se/term/rda/ComputerProgram|
-|Visual| |
-|Dataset||
-|Arrangement||
+|Visual|se subklasser MovingImage, StillImage |
+|Dataset|https://id.kb.se/term/ktg/Dataset|
 |NotatedMovement|https://id.kb.se/term/rda/NotatedMovement|
 |Software|https://id.kb.se/term/rda/ComputerProgram|
-|Music||
+|Music|https://id.kb.se/term/saogf/Music|
 |MusicAudio|https://id.kb.se/term/rda/PerformedMusic|
-|NonMusicalAudio||
-|NonMusicAudio||
+|NonMusicAudio|https://id.kb.se/term/rda/Sounds|
 |ManuscriptNotatedMusic| https://id.kb.se/term/saogf/Handskrifter + https://id.kb.se/term/rda/NotatedMusic |
-|Kit|ny genreForm Kit, ingen länk i skrivande stund |
+|Kit|https://id.kb.se/term/ktg/Kit |
 |ManuscriptCartography|https://id.kb.se/term/saogf/Handskrifter|  
-|MovingImage|https://id.kb.se/term/rda/TwoDimensionalMovingImage + https://id.kb.se/term/rda/CartographicImage  |
+|MovingImage|https://id.kb.se/term/rda/TwoDimensionalMovingImage  |
 |StillImage|https://id.kb.se/term/rda/StillImage |
-|ProjectedImage||  
   
 </details>
 
@@ -120,7 +84,7 @@ Gamla verkstyperna uttrycks med contentType (RDA-termlista) eller genreForm (SAO
                  
 ```
 
-####	Ny egenskap Kategori på instasen. Hit flyttas MediaType, CarrierType (och GenreForm om den fanns i instansdelen)
+####	Ny egenskap Kategori på instansen. Hit flyttas MediaType, CarrierType (och genre/form om den fanns i instansdelen och är olänkad)
 ```json
    
         "category": [
